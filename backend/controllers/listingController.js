@@ -85,3 +85,16 @@ export const uploadImage = asyncHandler(async (req, res) => {
   const result = await uploadWebContentMiddleware(buffer, folder);
   return res.status(200).json({ path: result });
 });
+
+export const deleteListing = asyncHandler(async (req, res) => {
+  const { id } = req.body;
+  try {
+    const deleted = await experience.findByIdAndDelete(id);
+    if (!deleted) {
+      return res.status(404).json({ message: "Experience not found" });
+    }
+    res.status(200).json({ message: "Listing deleted successfully" });
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});

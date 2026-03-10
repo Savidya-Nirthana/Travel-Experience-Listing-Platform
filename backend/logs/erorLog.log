@@ -22,3 +22,5 @@
 20260311	01:09:59	35198a27-4342-4081-a51e-fb5bbf8c03cf	req is not defined
 20260311	01:10:46	c882aa5f-3d97-47cf-a107-55ca1864a247	req is not defined
 20260311	03:15:03	ff3c4d5c-1b1b-4045-969d-9ebec9e2ea13	not found /api/v1/listing/imageUpload
+20260311	04:41:17	8e30b71b-cf1d-4822-ad03-86ff14663a7c	Cannot destructure property 'id' of 'req.body' as it is undefined.
+20260311	04:41:39	3b394679-c497-4490-a98b-630968b97100	Cannot destructure property 'id' of 'req.body' as it is undefined.
