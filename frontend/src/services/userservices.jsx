@@ -1,5 +1,5 @@
 import API from "./axiosinstant";
-const BASE_URL = "api/v1/user";
+const BASE_URL = "/user";
 
 export const verifyUser = async () => {
   try {

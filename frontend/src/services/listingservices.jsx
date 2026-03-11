@@ -1,5 +1,5 @@
 import API from "./axiosinstant";
-const BASE_URL = "api/v1/listing";
+const BASE_URL = "/listing";
 
 export const createLs = async ({
   title,
