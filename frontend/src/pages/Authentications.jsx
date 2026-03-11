@@ -39,6 +39,7 @@ const Authentications = () => {
       const reponse = await logingUser(email, password);
       if (reponse.status == 200) {
         showNotification(reponse.data.message, "success");
+        localStorage.setItem("jwt", reponse.data.token);
         setUser({
           email: reponse.data.email,
           firstname: reponse.data.firstname,
