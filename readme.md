@@ -29,6 +29,15 @@ A full-stack web application designed to allow users to explore, create, and man
 - **Cloud Storage:** Integration with Firebase and Atlas to handle and store user-uploaded images efficiently and database.
 - **CI/CD Pipeline:** GitHub Actions workflow (`deploy.yml`) set up for automated building and deployment to an AWS EC2 instance.
 
+## Screenshots
+
+<div align="center">
+  <img src="test_images/screenshot_login.png" alt="Login Page" width="45%" style="margin-right: 2%" />
+  <img src="test_images/screenshot_home.png" alt="Home Page Feed" width="45%" />
+  <br/><br/>
+  <img src="test_images/extra_details.png" alt="Extra Details / User Profile" width="60%" />
+</div>
+
 ## Project Structure
 
 The project is structured into two main directories:
@@ -47,6 +56,14 @@ The project is structured into two main directories:
    - Navigate to the `frontend` directory: `cd frontend`
    - Install dependencies: `npm install`
    - Start the Vite development server: `npm run dev`
+
+## Demo Accounts
+
+You can use the following accounts to easily test creating and editing listings:
+
+- **Email:** `snirthana1@gmail.com` | **Password:** `123`
+- **Email:** `snirthana5@gmail.com` | **Password:** `123`
+- **Email:** `testuser@gmail.com` | **Password:** `test@123`
 
 ## Architecture & Key Decisions
 

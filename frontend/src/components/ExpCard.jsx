@@ -75,7 +75,7 @@ const ExpCard = ({
       )}
 
       <img
-        className=" w-[400px] h-[200px] rounded-l-lg"
+        className=" w-[300px] h-[200px] rounded-l-lg"
         src={image}
         alt={title}
       />
