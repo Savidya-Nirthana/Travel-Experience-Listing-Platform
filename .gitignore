@@ -6,3 +6,7 @@ frontend/.env
 
 node_modules/
 .env
+
+aws/
+
+aws/travel_exp_app.pem
