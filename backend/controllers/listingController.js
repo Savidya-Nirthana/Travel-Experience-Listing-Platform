@@ -4,7 +4,7 @@ import { uploadWebContentMiddleware } from "../middlewares/uploadWebContentMiddl
 
 export const createListing = asyncHandler(async (req, res) => {
   const { title, location, image, description, price } = req.body;
-  const email = res.user.user.email;
+  const email = req.user.user.email;
   try {
     const newListing = await experience.create({
       email,
