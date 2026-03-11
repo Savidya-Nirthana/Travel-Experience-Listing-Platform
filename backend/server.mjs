@@ -8,7 +8,6 @@ import { errorHandler, notFound } from "./middlewares/errorMiddleware.js";
 import userRouter from "./routes/user.js";
 import listingRouter from "./routes/listing.js";
 
-
 const app = express();
 
 const server = http.createServer(app);
@@ -18,9 +17,9 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173", "http://13.60.81.13"],
     credentials: true,
-  })
+  }),
 );
 
 app.use("/api/v1/user", userRouter);
