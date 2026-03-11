@@ -27,7 +27,17 @@ jobs:
           npm ci
           npm run build
 
-      - name: Deploy to EC2
+      - name: Upload Frontend Build to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: "frontend/dist/."
+          target: "/var/www/frontend"
+          strip_components: 2
+
+      - name: Deploy Backend to EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -44,10 +54,4 @@ jobs:
             npm install --omit=dev
             pm2 restart travel-backend
 
-            # --- Frontend ---
-            cd ../frontend
-            npm ci
-            VITE_BASE_URL=http://${{ secrets.EC2_HOST }}/ npm run build
-            cp -r dist/. /var/www/frontend/
-
-            echo "✅ Deployment complete"
+            echo "Deployment complete"
