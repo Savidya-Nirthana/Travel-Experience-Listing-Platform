@@ -8,7 +8,7 @@ A full-stack web application designed to allow users to explore, create, and man
 
 - **React 19** with **Vite** for fast, modern UI development.
 - **React Router** for seamless client-side navigation.
-- **Tailwind CSS v4** & **Emotion** for responsive, modern styling and customized UI components.
+- **Tailwind CSS v4** for responsive, modern styling and customized UI components.
 - **Material UI** for pre-built, accessible UI components and icons.
 - **Framer Motion** for smooth, dynamic animations.
 - **Axios** for handling HTTP requests.
@@ -26,7 +26,6 @@ A full-stack web application designed to allow users to explore, create, and man
 - **User Authentication:** Secure registration, login, and session management using HTTP-only cookies and JWT.
 - **Experience Listings:** Users can view a feed of travel experiences, including details like title, location, description, price, and images.
 - **Create & Manage Listings:** Authenticated users can publish their own travel experiences and upload relevant images. They also have the ability to edit and delete their own listings.
-- **Responsive Design:** The UI is fully responsive, ensuring a great experience across desktop, tablet, and mobile devices.
 - **Cloud Storage:** Integration with Firebase and Atlas to handle and store user-uploaded images efficiently and database.
 - **CI/CD Pipeline:** GitHub Actions workflow (`deploy.yml`) set up for automated building and deployment to an AWS EC2 instance.
 
@@ -51,9 +50,9 @@ The project is structured into two main directories:
 
 ## Architecture & Key Decisions
 
-- **Tech Stack:** The MERN stack (MongoDB, Express, React, Node.js) was chosen for its unified JavaScript ecosystem, enabling seamless context-switching between frontend and backend code. Vite was used for the frontend to leverage its incredibly fast Hot Module Replacement (HMR) and optimized build processes compared to older bundlers.
+- **Tech Stack:** The MERN stack (MongoDB, Express, React, Node.js) was chosen for its unified JavaScript ecosystem, enabling seamless context-switching between frontend and backend code.
 - **Authentication:** Security is handled via JSON Web Tokens (JWT) stored in `HttpOnly` cookies. Upon successful login, the server issues a JWT and attaches it to an HTTP-only cookie, effectively mitigating Cross-Site Scripting (XSS) attacks since client-side JavaScript cannot access the token. A custom authentication middleware (`authMiddleware.js`) intercepts requests to protected routes to verify the token signature and extract the user payload.
-- **Database Storage:** Travel listings are stored in MongoDB as documents within the `experiences` collection using Mongoose ODM to enforce schema validation. Currently, a one-to-many relationship is maintained by storing the creator's `email` as a direct string field within the experience document.
+- **Database Storage:** Travel listings are stored in MongoDB as documents within the `experiences` collection using Mongoose ODM to enforce schema validation.
 - **Future Improvements:** Enhance overall responsiveness and introduce community features such as user profiles and a commenting system for individual listings. Additionally, expand listing customization options to allow users to create more engaging presentations beyond the basic details, and incorporate specific user interaction metrics including view, like, share, and save counts.
 
 ## Product thinking question
