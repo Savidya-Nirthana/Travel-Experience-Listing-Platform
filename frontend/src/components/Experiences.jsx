@@ -15,13 +15,16 @@ const Experiences = ({
   useEffect(() => {
     const fetchExperiences = async () => {
       const response = await getExperiences();
+      const data = response?.data;
+      if (!Array.isArray(data)) {
+        setItems([]);
+        return;
+      }
       if (showMyListing) {
-        const myListings = response.data.filter(
-          (item) => item.creatername === username,
-        );
+        const myListings = data.filter((item) => item.creatername === username);
         setItems(myListings);
       } else {
-        setItems(response.data);
+        setItems(data);
       }
     };
     fetchExperiences();
