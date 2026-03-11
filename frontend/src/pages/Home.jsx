@@ -14,7 +14,6 @@ const Home = () => {
   const { setUser, user, loading } = useContext(AuthContext);
   const handleLogout = async () => {
     await logOut();
-    localStorage.removeItem("jwt");
     setUser(null);
     navigate("/auth");
   };

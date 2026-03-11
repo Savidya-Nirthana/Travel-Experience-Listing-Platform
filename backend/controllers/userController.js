@@ -20,7 +20,6 @@ export const userLogin = asyncHandler(async (req, res) => {
     });
     return res.status(200).json({
       message: "Login successful",
-      token,
       email: user.email,
       firstname: user.firstname,
       lastname: user.lastname,
