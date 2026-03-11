@@ -39,17 +39,17 @@ const Home = () => {
         />
       </div>
 
-      <div className="pt-24 pb-10 flex justify-between gap-10 px-5 max-w-[1200px] mx-auto">
-        <div className="flex-1 max-w-[700px]">
+      <div className="pt-28 md:pt-24 pb-10 flex flex-col lg:flex-row lg:justify-between gap-6 lg:gap-10 px-4 sm:px-5 max-w-[1200px] mx-auto">
+        <div className="w-full lg:w-auto lg:sticky top-24 self-start flex justify-center">
+          <CreateListing onListingCreated={handleListingCreated} />
+        </div>
+        <div className="flex-1 w-full lg:max-w-[700px]">
           <Experiences
             showMyListing={showMyListing}
             refreshKey={refreshKey}
             searchQuery={searchQuery}
             onListingUpdated={handleListingCreated}
           />
-        </div>
-        <div className="sticky top-24 self-start">
-          <CreateListing onListingCreated={handleListingCreated} />
         </div>
       </div>
 

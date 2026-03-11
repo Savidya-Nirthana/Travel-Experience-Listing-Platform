@@ -24,3 +24,5 @@
 20260311	03:15:03	ff3c4d5c-1b1b-4045-969d-9ebec9e2ea13	not found /api/v1/listing/imageUpload
 20260311	04:41:17	8e30b71b-cf1d-4822-ad03-86ff14663a7c	Cannot destructure property 'id' of 'req.body' as it is undefined.
 20260311	04:41:39	3b394679-c497-4490-a98b-630968b97100	Cannot destructure property 'id' of 'req.body' as it is undefined.
+20260311	12:54:20	7971d158-f9c5-46a2-aac6-9e8f3ff45911	Cannot read properties of undefined (reading 'user')
+20260311	12:54:20	d53d2665-60da-462e-97e6-924224b272d8	Cannot read properties of undefined (reading 'user')
