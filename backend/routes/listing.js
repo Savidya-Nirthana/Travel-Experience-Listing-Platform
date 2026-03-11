@@ -13,7 +13,7 @@ const router = express.Router();
 const upload = multer();
 
 router.post("/create", protect, createListing);
-router.post("/fetch", protect, fetchExperiences);
+router.post("/fetch", fetchExperiences);
 router.post("/update", protect, updateExperiences);
 router.post("/uploadImage", protect, upload.single("file"), uploadImage);
 router.post("/deleteListing", protect, deleteListing);

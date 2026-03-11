@@ -48,9 +48,7 @@ export const updateLs = async ({
 
 export const getExperiences = async () => {
   try {
-    const response = await API.post(`${BASE_URL}/fetch`, {
-      withCredentials: true,
-    });
+    const response = await API.post(`${BASE_URL}/fetch`);
     return response;
   } catch (error) {
     return {
