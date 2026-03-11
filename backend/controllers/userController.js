@@ -18,7 +18,12 @@ export const userLogin = asyncHandler(async (req, res) => {
       firstname: user.firstname,
       lastname: user.lastname,
     });
-    return res.status(200).json({ message: "Login successful" });
+    return res.status(200).json({
+      message: "Login successful",
+      email: user.email,
+      firstname: user.firstname,
+      lastname: user.lastname,
+    });
   } catch (error) {
     console.error("Login error: ", error);
     res.status(500).json({ message: "Server error" });
@@ -57,7 +62,6 @@ export const verifyUser = asyncHandler(async (req, res) => {
   });
 });
 
-
 export const logOutUser = asyncHandler((req, res) => {
   res.cookie("jwt", "", {
     httpOnly: true,
@@ -65,4 +69,3 @@ export const logOutUser = asyncHandler((req, res) => {
   });
   return res.status(200).json({ message: `logout succesfull` });
 });
-

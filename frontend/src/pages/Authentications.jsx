@@ -15,10 +15,8 @@ import { createUser, logingUser } from "../services/userservices";
 
 const Authentications = () => {
   const { showNotification } = useNotification();
-  const { getData } = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext);
   const [showNext, setShowNext] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [error, setError] = useState(null);
 
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
@@ -34,8 +32,6 @@ const Authentications = () => {
 
   const submitLogin = async () => {
     if (!email || !password) {
-      setIsError(true);
-      setError("All inputs not provided");
       showNotification("All inputs not provided", "error");
       return;
     }
@@ -43,7 +39,11 @@ const Authentications = () => {
       const reponse = await logingUser(email, password);
       if (reponse.status == 200) {
         showNotification(reponse.data.message, "success");
-        await getData();
+        setUser({
+          email: reponse.data.email,
+          firstname: reponse.data.firstname,
+          lastname: reponse.data.lastname,
+        });
       } else {
         showNotification(reponse.message, "error");
       }
@@ -54,20 +54,14 @@ const Authentications = () => {
 
   const submitRegister = async () => {
     if (!email || !password || !confPassword) {
-      setIsError(true);
-      setError("All inputs not provided");
       showNotification("All inputs not provided", "error");
       return;
     }
     if (password !== confPassword) {
-      setIsError(true);
-      setError("Password and confirm password do not match");
       showNotification("Password and confirm password do not match", "error");
       return;
     }
     if (!termsChecked) {
-      setIsError(true);
-      setError("You must agree to the terms and conditions");
       showNotification("You must agree to the terms and conditions", "error");
       return;
     }
@@ -93,8 +87,6 @@ const Authentications = () => {
 
   const check_first_error = () => {
     if (!firstName || !lastName || !dob || !gender) {
-      setIsError(true);
-      setError("All inputs not provided");
       showNotification("All inputs not provided", "error");
       return;
     }
